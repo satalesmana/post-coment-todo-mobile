@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -56,7 +57,8 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         switch (id){
             case R.id.menu_action_add:
-                Toast.makeText(this, "ini menu add",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(this, FormActivity.class);
+                startActivity(intent);
                 break;
             case R.id.menu_action_edit:
                 Toast.makeText(this, "ini menu edit", Toast.LENGTH_LONG).show();
