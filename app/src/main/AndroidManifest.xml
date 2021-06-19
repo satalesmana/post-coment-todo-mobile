@@ -12,14 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PostArticle">
         <activity android:name=".FormActivity"></activity>
-        <activity
-            android:name=".SplashActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar">
+
         </activity>
         <activity android:name=".MainActivity" />
     </application>
