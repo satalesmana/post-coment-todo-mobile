@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">PostArticle</string>
+    <string name="form">FORM</string>
+    <string name="masukkan_title">Masukkan Title</string>
+    <string name="masukkan_body">Masukkan Body</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
