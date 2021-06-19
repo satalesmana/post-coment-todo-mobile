@@ -34,7 +34,7 @@
             android:inputType="text" />
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="150sp"
             android:hint="@string/masukkan_body"
             android:autofillHints="Body"
             android:inputType="text" />
