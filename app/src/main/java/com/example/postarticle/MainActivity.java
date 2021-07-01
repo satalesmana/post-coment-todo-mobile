@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.example.postarticle.Adapter.PostListAdapter;
+import com.example.postarticle.Db.DbManager;
 import com.example.postarticle.Model.PostModel;
 import com.example.postarticle.Retrofit.ApiService;
 
@@ -26,6 +27,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private PostListAdapter postListAdapter;
+    private DbManager dbManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.menu_action_delete:
                 Toast.makeText(this,"ini menu delete",Toast.LENGTH_LONG).show();
                 break;
+            case R.id.menu_logout:
+                logOut();
+                break;
         }
         return super.onOptionsItemSelected(item);
     }
@@ -74,6 +79,18 @@ public class MainActivity extends AppCompatActivity {
     * function yang di custome sendiri
     *
     * */
+
+    private void logOut(){
+        dbManager = new DbManager(this);
+        dbManager.open();
+        dbManager.deleteUser();
+        dbManager.close();
+
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void getPostList(){
         ApiService.endpoint().getListPosts().enqueue(new Callback<List<PostModel>>() {
             @Override
@@ -86,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<PostModel>> call, Throwable t) {
+                Log.d("ERR getPostList", t.toString());
                 Toast.makeText(getBaseContext(),t.toString(),Toast.LENGTH_LONG).show();
             }
         });
