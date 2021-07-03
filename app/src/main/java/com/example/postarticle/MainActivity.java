@@ -62,11 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(this, FormActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.menu_action_edit:
+            case R.id.menu_action_profile:
                 Toast.makeText(this, "ini menu edit", Toast.LENGTH_LONG).show();
-                break;
-            case R.id.menu_action_delete:
-                Toast.makeText(this,"ini menu delete",Toast.LENGTH_LONG).show();
                 break;
             case R.id.menu_logout:
                 logOut();

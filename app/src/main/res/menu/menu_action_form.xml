@@ -4,11 +4,8 @@
         android:id="@+id/menu_action_add"
         android:title="Add New"/>
 
-    <item android:id="@+id/menu_action_edit"
-        android:title="Edit Data" />
-
-    <item android:id="@+id/menu_action_delete"
-        android:title="Delete"/>
+    <item android:id="@+id/menu_action_profile"
+        android:title="Profile" />
 
     <item android:id="@+id/menu_logout"
         android:title="Logout"/>
